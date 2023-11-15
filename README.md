@@ -64,23 +64,20 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 [Render Markdown - Nextjs.org](https://nextjs.org/learn-pages-router/basics/dynamic-routes/render-markdown)
 
 - Contact
-- Email
-- GitHub
+  - Email
+  - GitHub
 - Services
   - Web Design
   - Web Hosting
   - Technical Consulting
   - Graphic Design
 - Creative
-
-* Music - link to SoundCloud
-* Art - Samples?
-
+  - Music - link to SoundCloud
+  - Art - Samples?
 - Portfolio?
 - About Website
 - KITTIES
-
-* Pics
+  - Pics
 
 ## License
 
