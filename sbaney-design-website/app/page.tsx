@@ -13,7 +13,7 @@ const HomePage = () => {
   const mainPageMetadata = getMainPagesMetadata();
   const mainPagePreviews = mainPageMetadata.map((slug) => (
     <div>
-      <Link href={"/mainPages/${slug}"}>
+      <Link href={`/mainPages/${slug}`}>
         <h2>{slug}</h2>
       </Link>
     </div>
