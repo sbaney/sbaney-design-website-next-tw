@@ -1,4 +1,5 @@
 import fs from "fs";
+import Markdown from "markdown-to-jsx";
 
 const getMainPageContent = (slug: string) => {
   const folder = "mainPages/";
@@ -11,10 +12,10 @@ const mainPage = (props: any) => {
   const slug = props.params.slug;
   const content = getMainPageContent(slug);
   return (
-    <p>
+    <div>
       <h1>This is a main page: {slug}</h1>
-      <p>{content}</p>
-    </p>
+      <Markdown>{content}</Markdown>
+    </div>
   );
 };
 

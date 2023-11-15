@@ -40,7 +40,8 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 ✔ Would you like to customize the default import alias (@/*)? … No
 ```
 
-[Tailwind CSS](https://tailwindcss.com/docs/installation) - Installed with `create-next-app`?
+- `npm i marktown-to-jsx` - Install Markdown to JSX
+- [Tailwind CSS](https://tailwindcss.com/docs/installation) - Installed with `create-next-app`?
 
 ## Content
 
