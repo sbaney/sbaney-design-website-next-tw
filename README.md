@@ -24,16 +24,18 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
  * Setup GitHub repository
  * Clone repository `git clone git@github.com:sbaney/sbaney-design-website-next-tw.git sbaney-design-website`
- * `cd sbaney-design-website`
+ * `cd sbaney-design-website` - somewhat ambiguous use of this directory name twice, fix?
 * `npx create-next-app@latest` - [Next.js](https://nextjs.org/docs/getting-started/installation)
 
-	✔ What is your project named? … sbaney-design-website
-	✔ Would you like to use TypeScript? … Yes
-	✔ Would you like to use ESLint? … Yes
-	✔ Would you like to use Tailwind CSS? … Yes
-	✔ Would you like to use `src/` directory? … No
-	✔ Would you like to use App Router? (recommended) … Yes
-	✔ Would you like to customize the default import alias (@/*)? … No
+```
+✔ What is your project named? … sbaney-design-website
+✔ Would you like to use TypeScript? … Yes
+✔ Would you like to use ESLint? … Yes
+✔ Would you like to use Tailwind CSS? … Yes
+✔ Would you like to use `src/` directory? … No
+✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to customize the default import alias (@/*)? … No
+```
 
 [Tailwind CSS](https://tailwindcss.com/docs/installation) - Installed with `create-next-app`?
 
