@@ -13,6 +13,8 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 [pixegami NextJS Tutorial repository](https://github.com/pixegami/nextjs-blog-tutorial) - more resources in video description
 
+[A Happy Lorem Ipsum - Bob Ross Quotes Generator](https://www.bobrosslipsum.com/) - USE AT YOUR OWN RISK
+
 ## Prerequitites / Project Setup
 
 ### Development Environment
