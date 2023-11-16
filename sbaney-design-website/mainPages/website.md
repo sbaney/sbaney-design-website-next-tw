@@ -70,6 +70,8 @@ Markdown files in `/mainPages` are processed by `gray-matter` and the title from
 - Routing is handled by the [App Router](https://nextjs.org/docs/app), using `app/mainPages/[slug]/page.tsx`.
 - [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) is used to create state routes at build time
 
+#### `/app/mainPages/[slug]/page.tsx`
+
 ```
 export async function generateStaticParams() {
   const mainPages = getMainPagesMetadata();
@@ -78,4 +80,29 @@ export async function generateStaticParams() {
     slug: mainPage.slug,
   }));
 }
+```
+
+- Main page content is parsed by `gray-matter` in the `getMainPageContent` function and rendered by [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) by wrapping the gray matter content in a `<Markdown` tag
+
+#### `/app/mainPages/[slug]/page.tsx`
+
+```
+const getMainPageContent = (slug: string) => {
+ const folder = "mainPages/";
+ const file = `${folder}${slug}.md`;
+ const content = fs.readFileSync(file, "utf8");
+ const matterResult = matter(content);
+ return matterResult;
+};
+
+const mainPage = (props: any) => {
+ const slug = props.params.slug;
+ const mainPage = getMainPageContent(slug);
+ return (
+   <div>
+     <h1>This is a main page: {mainPage.data.title}</h1>
+     <Markdown>{mainPage.content}</Markdown>
+   </div>
+ );
+};
 ```
