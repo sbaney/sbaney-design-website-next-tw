@@ -25,7 +25,9 @@ const mainPage = (props: any) => {
   return (
     <div>
       <h1>This is a main page: {mainPage.data.title}</h1>
-      <Markdown>{mainPage.content}</Markdown>
+      <article className="prose prose-slate">
+        <Markdown>{mainPage.content}</Markdown>
+      </article>
     </div>
   );
 };

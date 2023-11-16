@@ -23,9 +23,8 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 ### Development Environment
 
-[Dev environment documentation](https://github.com/sbaney/documentation/blob/main/dev-setup.md)
-
-[Node.js](https://nodejs.org/en/download/package-manager), VS Code, and Git are the core tools
+- [Dev environment documentation](https://github.com/sbaney/documentation/blob/main/dev-setup.md)
+- [Node.js](https://nodejs.org/en/download/package-manager), VS Code, and Git are the core tools
 
 ### Project Setup
 
@@ -47,6 +46,7 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 - `npm i marktown-to-jsx` - Install [Markdown to JSX](https://www.npmjs.com/package/markdown-to-jsx)
 - `npm i gray-matter` - Install [Gray Matter](https://www.npmjs.com/package/gray-matter)
 - `npm install -D tailwindcss postcss autoprefixer` `npx tailwindcss init -p` - Install [Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs)
+- `npm install -D @tailwindcss/typography` - [@tailwindcss/typography plugin](https://tailwindcss.com/docs/typography-plugin)
 
 ## Content
 
@@ -110,7 +110,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 ```
 
@@ -170,6 +172,7 @@ export async function generateStaticParams() {
 ```
 
 - Main page content is parsed by `gray-matter` in the `getMainPageContent` function and rendered by [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) by wrapping the gray matter content in a `<Markdown>` tag
+- The markdown is styled by wrapping it in a `<article className="prose prose-slate">` tag using the `@tailwindcss/typography` plugin
 
 #### `/app/mainPages/[slug]/page.tsx`
 
@@ -186,10 +189,12 @@ const mainPage = (props: any) => {
  const slug = props.params.slug;
  const mainPage = getMainPageContent(slug);
  return (
-   <div>
-     <h1>This is a main page: {mainPage.data.title}</h1>
-     <Markdown>{mainPage.content}</Markdown>
-   </div>
+    <div>
+      <h1>This is a main page: {mainPage.data.title}</h1>
+      <article className="prose prose-slate">
+        <Markdown>{mainPage.content}</Markdown>
+      </article>
+    </div>
  );
 };
 ```
