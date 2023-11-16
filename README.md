@@ -90,7 +90,7 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 - Tailwind directives added during `create-next-app`, did not need to update
 - Edited `/tailwind.config.js`
 
-### `/tailwind.config.js`
+#### `/tailwind.config.js`
 
 ```
 /** @type {import('tailwindcss').Config} */
@@ -110,7 +110,7 @@ module.exports = {
 }
 ```
 
-### Content of Removed `tailwind.config.ts`
+#### Content of Removed `tailwind.config.ts`
 
 ```
 import type { Config } from 'tailwindcss'
@@ -133,6 +133,84 @@ const config: Config = {
   plugins: [],
 }
 export default config
+```
+
+## Home Page
+
+The home page is at `/app/page.tsx`
+
+The main pages titles are loaded with the `getMainPagesMetadata` function located at `/components/getMainPagesMetadata.ts`. Page titles are front matter in individual Markdown files parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter)
+
+#### `/components/getMainPagesMetadata.ts`
+
+```
+import fs from "fs";
+import { MainPageMetadata } from "../components/MainPageMetadata";
+import matter from "gray-matter";
+
+const getMainPagesMetadata = ():MainPageMetadata[] => {
+    const folder = "mainPages/";
+    const files = fs.readdirSync(folder);
+    const markdownMainPages = files.filter((file) => file.endsWith(".md"));
+
+    // Get gray-matter data from each file.
+    const mainPages = markdownMainPages.map((fileName) => {
+        const fileContents = fs.readFileSync(`mainPages/${fileName}`, "utf8");
+        const matterResult = matter(fileContents);
+        return {
+        title: matterResult.data.title,
+        slug: fileName.replace(".md", ""),
+        };
+    });
+    return mainPages;
+};
+
+  export default getMainPagesMetadata;
+```
+
+Markdown files in `/mainPages` are processed by `gray-matter` and the title from front matter and the filename without extenstion are mapped into the MainPageMetadata properties.
+
+## Main Pages
+
+- Main pages are Markdown files located at `/mainPages`.
+- Routing is handled by the [App Router](https://nextjs.org/docs/app), using `app/mainPages/[slug]/page.tsx`.
+- [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) is used to create state routes at build time
+
+#### `/app/mainPages/[slug]/page.tsx`
+
+```
+export async function generateStaticParams() {
+  const mainPages = getMainPagesMetadata();
+
+  return mainPages.map((mainPage) => ({
+    slug: mainPage.slug,
+  }));
+}
+```
+
+- Main page content is parsed by `gray-matter` in the `getMainPageContent` function and rendered by [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) by wrapping the gray matter content in a `<Markdown` tag
+
+#### `/app/mainPages/[slug]/page.tsx`
+
+```
+const getMainPageContent = (slug: string) => {
+ const folder = "mainPages/";
+ const file = `${folder}${slug}.md`;
+ const content = fs.readFileSync(file, "utf8");
+ const matterResult = matter(content);
+ return matterResult;
+};
+
+const mainPage = (props: any) => {
+ const slug = props.params.slug;
+ const mainPage = getMainPageContent(slug);
+ return (
+   <div>
+     <h1>This is a main page: {mainPage.data.title}</h1>
+     <Markdown>{mainPage.content}</Markdown>
+   </div>
+ );
+};
 ```
 
 ## License
