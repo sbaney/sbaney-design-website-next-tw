@@ -1,3 +1,7 @@
+---
+title: "Resume"
+---
+
 # Steve Baney
 
 ## 484-716-5099

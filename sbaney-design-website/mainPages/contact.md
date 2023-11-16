@@ -1,3 +1,7 @@
+---
+title: "Contact"
+---
+
 # Contact
 
 [SBaneyDesign@gmail.com](mailto:sbaneydesign@gmail.com)

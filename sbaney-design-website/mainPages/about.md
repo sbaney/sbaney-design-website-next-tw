@@ -1,3 +1,7 @@
+---
+title: "About Me"
+---
+
 # Bio
 
 The only thing worse than yellow snow is green snow. Fluff that up. Don't hurry. Take your time and enjoy. We don't want to set these clouds on fire.

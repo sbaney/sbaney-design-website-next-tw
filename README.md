@@ -40,7 +40,8 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 ✔ Would you like to customize the default import alias (@/*)? … No
 ```
 
-- `npm i marktown-to-jsx` - Install Markdown to JSX
+- `npm i marktown-to-jsx` - Install [Markdown to JSX](https://www.npmjs.com/package/markdown-to-jsx)
+- `npm i gray-matter` - Install [Gray Matter](https://www.npmjs.com/package/gray-matter)
 - [Tailwind CSS](https://tailwindcss.com/docs/installation) - Installed with `create-next-app`?
 
 ## Content
