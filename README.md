@@ -88,21 +88,51 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 - Removed `/tailwind.config.ts` - Installed with `create-next-app`, potential duplicate step due to differences in versions from tutorial?
 - Followed [Installation Instructions for Next.js](https://tailwindcss.com/docs/guides/nextjs)
 - Tailwind directives added during `create-next-app`, did not need to update
-- Edited `/tailwind.config.ts`
+- Edited `/tailwind.config.js`
+
+### `/tailwind.config.js`
 
 ```
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    //"./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
+    // Or if using `src` directory:
+    //"./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
 }
+```
+
+### Content of Removed `tailwind.config.ts`
+
+```
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+    },
+  },
+  plugins: [],
+}
+export default config
 ```
 
 ## License
