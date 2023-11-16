@@ -139,7 +139,9 @@ export default config
 
 The home page is at `/app/page.tsx`
 
-The main pages titles are loaded with the `getMainPagesMetadata` function located at `/components/getMainPagesMetadata.ts`. Page titles are front matter in individual Markdown files parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter)
+### Navigation
+
+The main pages titles are loaded with the `getMainPagesMetadata` function located at `/components/getMainPagesMetadata.ts`. Page titles are front matter in individual Markdown files parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter). The title from front matter and the filename without extenstion are mapped into the MainPageMetadata properties.
 
 #### `/components/getMainPagesMetadata.ts`
 
@@ -167,8 +169,6 @@ const getMainPagesMetadata = ():MainPageMetadata[] => {
 
   export default getMainPagesMetadata;
 ```
-
-Markdown files in `/mainPages` are processed by `gray-matter` and the title from front matter and the filename without extenstion are mapped into the MainPageMetadata properties.
 
 ## Main Pages
 
