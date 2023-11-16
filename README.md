@@ -42,7 +42,7 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 - `npm i marktown-to-jsx` - Install [Markdown to JSX](https://www.npmjs.com/package/markdown-to-jsx)
 - `npm i gray-matter` - Install [Gray Matter](https://www.npmjs.com/package/gray-matter)
-- [Tailwind CSS](https://tailwindcss.com/docs/installation) - Installed with `create-next-app`?
+- `npm install -D tailwindcss postcss autoprefixer` `npx tailwindcss init -p` - Install [Tailwind CSS](https://tailwindcss.com/docs/guides/nextjs)
 
 ## Content
 
@@ -82,6 +82,28 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 - About Website
 - KITTIES
   - Pics
+
+## Tailwind
+
+- Removed `/tailwind.config.ts` - Installed with `create-next-app`, potential duplicate step due to differences in versions from tutorial?
+- Followed [Installation Instructions for Next.js](https://tailwindcss.com/docs/guides/nextjs)
+- Tailwind directives added during `create-next-app`, did not need to update
+- Edited `/tailwind.config.ts`
+
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
 ## License
 
