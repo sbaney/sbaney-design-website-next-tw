@@ -110,38 +110,15 @@ module.exports = {
 }
 ```
 
-#### Content of Removed `tailwind.config.ts`
-
-```
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  plugins: [],
-}
-export default config
-```
-
 ## Home Page
 
 The home page is at `/app/page.tsx`
 
 ### Navigation
 
-The main pages titles are loaded with the `getMainPagesMetadata` function located at `/components/getMainPagesMetadata.ts`. Page titles are front matter in individual Markdown files parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter). The title from front matter and the filename without extenstion are mapped into the MainPageMetadata properties.
+- The main pages titles are loaded with the `getMainPagesMetadata` function located at `/components/getMainPagesMetadata.ts`.
+- Page titles are front matter in individual Markdown files parsed by [gray-matter](https://github.com/jonschlinkert/gray-matter).
+- The title from front matter and the filename without extenstion are mapped into the MainPageMetadata properties.
 
 #### `/components/getMainPagesMetadata.ts`
 
@@ -188,7 +165,7 @@ export async function generateStaticParams() {
 }
 ```
 
-- Main page content is parsed by `gray-matter` in the `getMainPageContent` function and rendered by [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) by wrapping the gray matter content in a `<Markdown` tag
+- Main page content is parsed by `gray-matter` in the `getMainPageContent` function and rendered by [markdown-to-jsx](https://www.npmjs.com/package/markdown-to-jsx) by wrapping the gray matter content in a `<Markdown>` tag
 
 #### `/app/mainPages/[slug]/page.tsx`
 
