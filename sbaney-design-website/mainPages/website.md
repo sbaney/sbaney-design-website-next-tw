@@ -199,6 +199,29 @@ const mainPage = (props: any) => {
 };
 ```
 
+## Style
+
+### Defaulting to Dark Mode - NEEDS REVIEWED
+
+- [Toggling Dark Mode Manually](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+- Wrapped content in `<div className="dark">`
+
+#### `/app/layout.tsx`
+
+```
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="dark">
+          {header}
+          {children}
+          {footer}
+        </div>
+      </body>
+    </html>
+  );
+```
+
 ## License
 
 Review license, but should make everything available for education purposes. Need to look into licensing for image assets.

@@ -17,7 +17,7 @@ export default function RootLayout({
   const header = (
     <header>
       <div>
-        <h1 className="text-3xl font-bold underline">SBaney Design</h1>
+        <h1 className="text-3xl">SBaney Design</h1>
         <h4>Creative and Technical Design and Consulting</h4>
       </div>
     </header>
@@ -36,7 +36,7 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="en">
+    <html className="dark" lang="en">
       <body className={inter.className}>
         {header}
         {children}
