@@ -15,6 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const mainPageMetadata = getMainPagesMetadata();
+
   const mainNav = () => {
     const mainPageMetadata = getMainPagesMetadata();
     const mainPageNav = mainPageMetadata.map((mainPage) => (
@@ -26,6 +27,7 @@ export default function RootLayout({
       </nav>
     );
   };
+
   const header = (
     <header>
       <div>
@@ -51,9 +53,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {header}
-        {children}
-        {footer}
+        <div class="dark:bg-slate-800 dark:text-white">
+          {header}
+          {children}
+          {footer}
+        </div>
       </body>
     </html>
   );

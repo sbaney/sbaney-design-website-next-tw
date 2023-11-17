@@ -2,6 +2,18 @@
 title: "About Me"
 ---
 
+# Philosophy
+
+Design and creativity are more about discovery than anything else. The pieces are all out there, the joy is in finding and assembling a product that is both beautiful and functional. Finding ideas and concepts that bring together the client, the end user, and the designer brings joy to the process and the user experience.
+
+SBaney Design strives to combine the creativity of design with the structure of engineering.I focus on process as much as product, technique as much as technology, and partnership over profit.
+
+Every business is a partnership between stakeholders, clients, and the community, and SBaney Design strives to incorporate these partnerships into all of our decisions. Open source software, proper licensing and attribution, fair pricing, privacy, human rights, and environmental considerations, among others, need to be core beliefs and not externalities.
+
+SBaney Design is a process, and will always be a work in progress. I want our goals to be aspirational and flexible. Conversation is valued over proclamation, and constructive criticism and feedback is always welcomed. In that spirit, SBaney Design will always strive to be as transparent as reasonably possible within the constraints of client and user privacy.
+
+There will always be tension between some of these goals, and I will not always strike the right balance, but I will always stand by my principles.
+
 # Bio
 
 The only thing worse than yellow snow is green snow. Fluff that up. Don't hurry. Take your time and enjoy. We don't want to set these clouds on fire.
