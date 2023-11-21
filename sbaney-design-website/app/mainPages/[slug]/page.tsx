@@ -23,29 +23,31 @@ const mainPage = (props: any) => {
   const slug = props.params.slug;
   const mainPage = getMainPageContent(slug);
   return (
-    <div>
-      <div className="grid grid-flow-col auto-cols-auto">
-        <div className="">
+    <div className="">
+      <div className="grid grid-cols-10">
+        <div className="col-span-9">
           <h1>This is a main page: {mainPage.data.title}</h1>
           <article className="prose">
             <Markdown>{mainPage.content}</Markdown>
           </article>
         </div>
-        <div className="md:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 md:hidden"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
+        <div className="col-span-1 md:hidden overflow-y-auto">
+          <div className="fixed">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
