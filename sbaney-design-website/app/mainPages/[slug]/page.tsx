@@ -23,9 +23,9 @@ const mainPage = (props: any) => {
   const slug = props.params.slug;
   const mainPage = getMainPageContent(slug);
   return (
-    <div className="">
+    <div className="scroll-smooth">
       <h1>This is a main page: {mainPage.data.title}</h1>
-      <article className="prose">
+      <article className="prose dark:prose-invert">
         <Markdown>{mainPage.content}</Markdown>
       </article>
     </div>

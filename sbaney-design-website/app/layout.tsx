@@ -39,7 +39,7 @@ export default function RootLayout({
   const header = (
     <header>
       <div className="text-center">
-        <div className="pt-1 pb-2">
+        <div className="py-6">
           <h1 className="text-5xl dark:text-red-700">SBaney Design</h1>
           <h4>Creative and Technical Design and Consulting</h4>
         </div>
@@ -73,8 +73,8 @@ export default function RootLayout({
           <div className="max-w-xl mx-auto pt-8 pb-4">
             <div className="grid grid-cols-10">
               <div className="col-span-9">{children}</div>
-              <div className="col-span-1">
-                <Link href={`/#mainNav`}>
+              <div className="col-span-1 pl-4">
+                <Link href={`#mainNav`}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
