@@ -32,19 +32,19 @@ const mainPage = (props: any) => {
           </article>
         </div>
         <div className="col-span-1 md:hidden overflow-y-auto">
-          <div className="fixed">
+          <div className="fixed bg-sky-500 text-red-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
+              strokeWidth="1.5"
               stroke="currentColor"
               className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
           </div>
