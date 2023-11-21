@@ -95,6 +95,7 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 ```
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'media',
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     //"./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -104,7 +105,38 @@ module.exports = {
     //"./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {fontFamily: {
+      sans: [
+        'Inter var',
+        'ui-sans-serif',
+        'system-ui',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+      serif: ['Lora','ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        '"Liberation Mono"',
+        '"Courier New"',
+        'monospace',
+      ],
+    },
+    typography: (theme) => ({
+      DEFAULT: {
+        css: {
+          p: {
+            fontFamily: 'serif',
+          },
+        },
+      },
+    })},
   },
   plugins: [
     require('@tailwindcss/typography'),
@@ -144,6 +176,8 @@ const getMainPagesMetadata = ():MainPageMetadata[] => {
         };
     });
     return mainPages;
+    //const slugs = markdownMainPages.map((file) => file.replace(".md", ""));
+    //return slugs;
 };
 
   export default getMainPagesMetadata;
@@ -174,25 +208,27 @@ export async function generateStaticParams() {
 
 ```
 const getMainPageContent = (slug: string) => {
- const folder = "mainPages/";
- const file = `${folder}${slug}.md`;
- const content = fs.readFileSync(file, "utf8");
- const matterResult = matter(content);
- return matterResult;
+  const folder = "mainPages/";
+  const file = `${folder}${slug}.md`;
+  const content = fs.readFileSync(file, "utf8");
+  const matterResult = matter(content);
+  return matterResult;
 };
 
 const mainPage = (props: any) => {
- const slug = props.params.slug;
- const mainPage = getMainPageContent(slug);
- return (
-    <div>
+  const slug = props.params.slug;
+  const mainPage = getMainPageContent(slug);
+  return (
+    <div className="">
       <h1>This is a main page: {mainPage.data.title}</h1>
-      <article className="prose prose-slate">
+      <article className="prose">
         <Markdown>{mainPage.content}</Markdown>
       </article>
     </div>
- );
+  );
 };
+
+export default mainPage;
 ```
 
 ## Style
@@ -205,15 +241,39 @@ const mainPage = (props: any) => {
 #### `/app/layout.tsx`
 
 ```
-  return (
-    <html className="dark" lang="en">
-      <body className={inter.className}>
-          {header}
-          {children}
-          {footer}
-      </body>
-    </html>
-  );
+return (
+  <html lang="en" className="scroll-smooth">
+    <body>
+      <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
+        {header}
+        <div className="max-w-xl mx-auto pt-8 pb-4">
+          <div className="grid grid-cols-10">
+            <div className="col-span-9">{children}</div>
+            <div className="col-span-1">
+              <Link href={`/#mainNav`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6 fixed dark:text-red-600"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+        {footer}
+      </div>
+    </body>
+  </html>
+);
 ```
 
 ## License
