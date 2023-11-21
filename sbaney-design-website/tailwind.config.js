@@ -10,7 +10,7 @@ module.exports = {
     //"./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
+    extend: {fontFamily: {
       sans: [
         'Inter var',
         'ui-sans-serif',
@@ -41,7 +41,7 @@ module.exports = {
           },
         },
       },
-    })
+    })},
   },
   plugins: [
     require('@tailwindcss/typography'),

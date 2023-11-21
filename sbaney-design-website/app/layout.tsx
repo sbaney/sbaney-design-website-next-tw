@@ -38,14 +38,14 @@ export default function RootLayout({
 
   const header = (
     <header>
-      <div className="text-center dark:bg-cyan-950 dark:text-sky-700">
+      <div className="text-center">
         <div className="pt-1 pb-2">
           <h1 className="text-5xl dark:text-red-700">SBaney Design</h1>
           <h4>Creative and Technical Design and Consulting</h4>
         </div>
         <div
           id="mainNav"
-          className="main-nav items-center gap-[4vw] dark:bg-slate-950 dark:text-sky-500"
+          className="main-nav items-center gap-[4vw] bg-sky-500 text-sky-900 dark:bg-slate-950 dark:text-sky-500"
         >
           {mainNav()}
         </div>
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body>
-        <div className="dark:bg-sky-950 dark:text-cyan-600">
+        <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
           {header}
           <div className="max-w-xl mx-auto pt-8 pb-4">
             <div className="grid grid-cols-10">
@@ -81,7 +81,7 @@ export default function RootLayout({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6 fixed"
+                    className="w-6 h-6 fixed dark:text-red-600"
                   >
                     <path
                       strokeLinecap="round"
