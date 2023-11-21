@@ -70,8 +70,8 @@ export default function RootLayout({
       <body>
         <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
           {header}
-          <div className="max-w-xl mx-auto pt-8 pb-4">
-            <div className="grid grid-cols-10">
+          <div className="">
+            <div className="grid grid-cols-10 max-w-xl mx-auto pt-8 pb-4">
               <div className="col-span-9">{children}</div>
               <div className="col-span-1 pl-4">
                 <Link href={`#mainNav`}>
@@ -81,7 +81,7 @@ export default function RootLayout({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6 fixed dark:text-red-600"
+                    className="w-6 h-6 dark:text-red-600 top-8 sticky"
                   >
                     <path
                       strokeLinecap="round"

@@ -24,7 +24,6 @@ const mainPage = (props: any) => {
   const mainPage = getMainPageContent(slug);
   return (
     <div className="scroll-smooth">
-      <h1>This is a main page: {mainPage.data.title}</h1>
       <article className="prose dark:prose-invert">
         <Markdown>{mainPage.content}</Markdown>
       </article>
