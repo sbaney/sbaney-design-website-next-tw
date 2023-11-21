@@ -87,7 +87,7 @@ Render using [remark-rehype](https://github.com/remarkjs/remark-rehype) and [reh
 
 - Removed `/tailwind.config.ts` - Installed with `create-next-app`, potential duplicate step due to differences in versions from tutorial?
 - Followed [Installation Instructions for Next.js](https://tailwindcss.com/docs/guides/nextjs)
-- Tailwind directives added during `create-next-app`, did not need to update
+- Tailwind directives added to `app/globals.css` during `create-next-app`, did not need to update
 - Edited `/tailwind.config.js`
 
 #### `/tailwind.config.js`
