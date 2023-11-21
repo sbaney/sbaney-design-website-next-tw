@@ -59,7 +59,7 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body>
         <div className="dark:bg-slate-800 dark:text-white">
           {header}
