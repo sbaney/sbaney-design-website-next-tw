@@ -3,7 +3,7 @@ import getMainPagesMetadata from "@/components/getMainPageMetadata";
 
 const HomePage = () => {
   return (
-    <div>
+    <div id="homePageContent">
       <p>
         In painting, you have unlimited power. You have the ability to move
         mountains. You can create beautiful things - but you have to see them in
