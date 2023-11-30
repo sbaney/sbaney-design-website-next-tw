@@ -26,6 +26,13 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 - Setup GitHub repository
 - Clone repository `git clone git@github.com:sbaney/sbaney-design-website-next-tw.git sbaney-design-website`
+
+#### Install Next
+
+ - `npm install next`
+
+#### Initial Setup
+
 - `cd sbaney-design-website` - somewhat ambiguous use of this directory name twice, fix?
 - `npx create-next-app@latest` - [Next.js](https://nextjs.org/docs/getting-started/installation)
 
