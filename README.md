@@ -29,9 +29,13 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 #### Install Next
 
+Building project from existing git repository
+
  - `npm install next`
 
 #### Initial Setup
+
+Building project from new empty repository
 
 - `cd sbaney-design-website` - somewhat ambiguous use of this directory name twice, fix?
 - `npx create-next-app@latest` - [Next.js](https://nextjs.org/docs/getting-started/installation)
