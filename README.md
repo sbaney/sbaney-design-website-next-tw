@@ -29,7 +29,7 @@ pixegami](https://youtu.be/Hiabp1GY8fA?si=2zwNqC3rztUfUUcT)
 
 #### Install Next
 
- - `npm install next`
+- `npm install next`
 
 #### Initial Setup
 
@@ -249,38 +249,39 @@ export default mainPage;
 
 ```
 return (
-  <html lang="en" className="scroll-smooth">
-    <body>
-      <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
-        {header}
-        <div className="max-w-xl mx-auto pt-8 pb-4">
-          <div className="grid grid-cols-10">
-            <div className="col-span-9">{children}</div>
-            <div className="col-span-1">
-              <Link href={`/#mainNav`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6 fixed dark:text-red-600"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </Link>
+    <html lang="en" className="scroll-smooth">
+      <body>
+        <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
+          {header}
+          <div className="">
+            <div className="grid grid-cols-10 max-w-xl mx-auto pt-8 pb-4">
+              <div className="col-span-9">{children}</div>
+              <div className="col-span-1 pl-4">
+                <Link href={`#mainNav`}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6 dark:text-red-600 top-8 sticky"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
+          {footer}
         </div>
-        {footer}
-      </div>
-    </body>
-  </html>
-);
+      </body>
+    </html>
+  );
+}
 ```
 
 ## License
