@@ -54,8 +54,8 @@ export default function RootLayout({
   );
 
   const footer = (
-    <footer className="dark:bg-slate-950 dark:text-sky-500">
-      <div className="max-w-3xl mx-auto py-2">
+    <footer className="dark:bg-slate-950 dark:text-sky-500 w-full">
+      <div className="max-w-5xl mx-auto py-2">
         <a href="https://github.com/sbaney/sbaney-design-website-next-tw">
           GitHub Repository
         </a>
@@ -66,36 +66,37 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="en" className="scroll-smooth">
-      <body>
-        <div className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
+    <html lang="en" className="scroll-smooth h-screen">
+      <body className="bg-sky-200 text-slate-950 dark:bg-sky-950 dark:text-cyan-600">
           {header}
-          <div className="">
-            <div className="grid grid-cols-10 max-w-xl mx-auto pt-8 pb-4">
-              <div className="col-span-9">{children}</div>
-              <div className="col-span-1 pl-4">
-                <Link href={`#mainNav`}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-red-600 top-8 sticky"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </Link>
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-1">
+              <div className="grid grid-cols-10 max-w-xl mx-auto pt-8 pb-4">
+                <div className="col-span-9">{children}</div>
+                  <div className="col-span-1 pl-4">
+                    <Link href={`#mainNav`}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6 dark:text-red-600 top-8 sticky"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          {footer}
-        </div>
+            {footer}
       </body>
+
     </html>
   );
 }
